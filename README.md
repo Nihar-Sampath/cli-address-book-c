@@ -16,6 +16,7 @@ A terminal-based contact manager written in C using structs, pointers, custom st
 * `main.c` — Runs the interactive `do...while` menu loop.
 * `contact.c` / `contact.h` — Defines `Contact` and `AddressBook` structs, input validation, sorting (`strcasecmp`), and CRUD logic.
 * `file.c` / `file.h` — Handles reading from and writing to `AddressBook.csv`.
+* `assets/` — Contains the architecture flowcharts, terminal previews, and presentation deck.
 
 ## How to Compile & Run
 Make sure you have `gcc` installed (Linux, macOS, or Windows with MinGW/WSL):
@@ -26,15 +27,26 @@ gcc main.c contact.c file.c -o addressbook
 ```
 
 ## Program Flow & Architecture
-## Program Flow & Architecture
 
-![Overview](assets/slide1.png)
-![Main Program Flow](assets/slide2.png)
-![Creating a Contact](assets/slide3.png)
-![Search, Edit, and Delete Flow](assets/slide4.png)
+📄 **[View Full Presentation Deck (PDF)](assets/cli-address-book-presentation.pdf)**
 
+### 1. Overview & Main Program Loop
+![Overview](assets/slide-1-overview.png)
+![Main Program Flow](assets/slide-2-main-flow.png)
+
+### 2. Core Operations Flowcharts
+![Creating a Contact](assets/slide-3-create-flow.png)
+![Search, Edit, and Delete Flow](assets/slide-4-search-edit-delete.png)
+
+### 3. Data Structures & Terminal Output
+![Data and Functions](assets/slide-5-architecture.png)
+![Input and Output](assets/slide-6-io-example.png)
 
 ## Future Upgrades
+![Where It Fits and What's Next](assets/slide-7-upgrades.png)
+
 * Replace the fixed 100-contact array with dynamic memory allocation (`malloc` and `realloc`).
 * Migrate storage from CSV to SQLite for faster querying.
 * Support punctuation in names (e.g., `"K. Nihar"` or `"O'Brien"`).
+* Use `qsort` when data changes rather than sorting on every list call.
+* Add support for additional fields such as address, birthday, groups, and vCard import/export.
